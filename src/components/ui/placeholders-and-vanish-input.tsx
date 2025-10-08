@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export function PlaceholdersAndVanishInput({
   placeholders,
@@ -13,6 +14,7 @@ export function PlaceholdersAndVanishInput({
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }) {
+  const { isRTL, locale } = useLocale()
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
   const [value, setValue] = useState("");
   const [animating, setAnimating] = useState(false);
@@ -195,16 +197,26 @@ export function PlaceholdersAndVanishInput({
         onKeyDown={handleKeyDown}
         placeholder=""
         className={cn(
-          "w-full h-full rounded-full px-4 sm:pl-10 pr-20 border-none bg-transparent text-gray-900 dark:text-white text-sm sm:text-base focus:outline-none",
-          animating && "text-transparent"
+          "w-full h-full rounded-full border-none bg-transparent text-gray-900 dark:text-white text-sm sm:text-base focus:outline-none",
+          animating && "text-transparent",
+          // Conditional padding for LTR/RTL
+          isRTL
+            ? "pr-4 sm:pr-10 pl-20"
+            : "pl-4 sm:pl-10 pr-20"
         )}
       />
+
 
       {/* Submit button */}
       <button
         type="submit"
         disabled={!value}
-        className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:opacity-50"
+        className={`
+    absolute top-1/2 -translate-y-1/2 h-8 w-8 rounded-full flex items-center justify-center
+    bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700
+    disabled:opacity-50
+    ${isRTL ? 'left-2' : 'right-2'}
+  `}
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
@@ -224,9 +236,11 @@ export function PlaceholdersAndVanishInput({
             animate={{ strokeDashoffset: value ? 0 : "50%" }}
             transition={{ duration: 0.3 }}
           />
-          <path d="M13 18l6-6-6-6" />
+          {/* Flip arrow direction for RTL */}
+          <path d={isRTL ? "M11 18l-6-6 6-6" : "M13 18l6-6-6-6"} />
         </motion.svg>
       </button>
+
 
       {/* Placeholder rotation */}
       <div className="absolute inset-0 flex items-center rounded-full pointer-events-none">
@@ -238,12 +252,16 @@ export function PlaceholdersAndVanishInput({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -5 }}
               transition={{ duration: 0.3 }}
-              className="pl-4 sm:pl-12 text-gray-500 dark:text-zinc-400 text-sm sm:text-base truncate"
+              className={`
+        text-gray-500 dark:text-zinc-400 text-sm sm:text-base truncate
+        ${isRTL ? 'pr-4 sm:pr-12' : 'pl-4 sm:pl-12'}
+      `}
             >
               {placeholders[currentPlaceholder]}
             </motion.p>
           )}
         </AnimatePresence>
+
       </div>
     </form>
   );

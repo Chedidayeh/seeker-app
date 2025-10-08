@@ -12,12 +12,16 @@ import {
 import { useState } from "react";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function AppNavbar() {
+  const t = useTranslations('Navigation');
+  
   const navItems = [
-    { name: "Categories", link: "#categories" },
-    { name: "Find providers", link: "#find" },
-    { name: "How it works", link: "#how-it-works" },
+    { name: t('categories'), link: "/categories" },
+    { name: t('findProviders'), link: "/professionals" },
+    { name: t('howItWorks'), link: "#how-it-works" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,7 +38,7 @@ export function AppNavbar() {
             className="flex w-full items-center justify-between"
           >
             <motion.a
-              href="#"
+              href="/"
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
@@ -54,9 +58,9 @@ export function AppNavbar() {
               transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
               className="flex items-center gap-4"
             >
-              {/* <ModeToggle /> */}
+              <LanguageSwitcher />
               <AnimatedThemeToggler className="z-50 text-lg"/>
-              <NavbarButton variant="primary">Sign in</NavbarButton>
+              <NavbarButton variant="primary">{t('signIn')}</NavbarButton>
             </motion.div>
           </motion.div>
         </NavBody>
@@ -113,7 +117,7 @@ export function AppNavbar() {
                 variant="primary"
                 className="w-full"
               >
-                Sign in
+                {t('signIn')}
               </NavbarButton>
             </motion.div>
           </MobileNavMenu>

@@ -1,14 +1,18 @@
 import { ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { useLocale } from "@/contexts/LocaleContext"
 
 export function InteractiveHoverButton({
   children,
   className,
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  const { isRTL, locale } = useLocale()
+
   return (
     <button
+    dir="ltr"
       className={cn(
         "group bg-background relative w-auto cursor-pointer overflow-hidden rounded-full border p-2 px-6 text-center font-semibold",
         className

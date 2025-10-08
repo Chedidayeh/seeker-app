@@ -1,0 +1,237 @@
+{
+  "HomePage": {
+    "title": "Bienvenue sur Seeker",
+    "description": "Trouvez les meilleurs professionnels pour vos besoins"
+  },
+  "Navigation": {
+    "categories": "Catégories",
+    "findProviders": "Trouver des Prestataires",
+    "howItWorks": "Comment ça Marche",
+    "signIn": "Se Connecter"
+  },
+  "Hero": {
+    "title": {
+      "part1": "Trouvez des",
+      "part2": "Professionnels de Confiance"
+    },
+    "subtitle": "Connectez-vous avec des professionnels qualifiés dans les domaines juridique, design, finance, marketing, santé et plus encore. Découvrez des experts à proximité qui peuvent vous aider à atteindre vos objectifs.",
+    "searchPlaceholders": {
+      "lawyer": "Trouver un avocat pour les contrats commerciaux",
+      "designer": "Rechercher un graphiste",
+      "financialAdvisor": "Besoin d'un conseiller financier",
+      "marketingConsultant": "Rechercher des consultants marketing",
+      "healthcare": "Trouver des professionnels de santé",
+      "homeRepair": "Rechercher des services de réparation à domicile",
+      "realEstate": "Besoin d'un agent immobilier",
+      "itSpecialist": "Rechercher des spécialistes informatiques"
+    },
+    "stats": {
+      "verifiedProfessionals": "5,000+ Professionnels Vérifiés",
+      "serviceCategories": "50+ Catégories de Services",
+      "successfulConnections": "10,000+ Connexions Réussies"
+    }
+  },
+  "ServiceCategories": {
+    "badge": "Explorer les Services",
+    "title": {
+      "part1": "Trouvez des Professionnels dans",
+      "part2": "Chaque Catégorie"
+    },
+    "description": "Des conseils juridiques au design créatif, connectez-vous avec des professionnels vérifiés dans plus de 50 catégories de services. Chaque expert est soigneusement vérifié pour la qualité et l'expertise.",
+    "cta": "Parcourir Toutes les Catégories",
+    "categories": {
+      "legal": {
+        "name": "Services Juridiques",
+        "description": "Avocats, juristes et consultants juridiques",
+        "count": "1,200+ professionnels"
+      },
+      "design": {
+        "name": "Design & Créatif",
+        "description": "Graphistes, UI/UX et professionnels créatifs",
+        "count": "2,500+ professionnels"
+      },
+      "finance": {
+        "name": "Finance & Comptabilité",
+        "description": "Conseillers financiers, comptables et experts fiscaux",
+        "count": "1,800+ professionnels"
+      },
+      "marketing": {
+        "name": "Marketing & Publicité",
+        "description": "Marketeurs digitaux, experts SEO et stratèges de marque",
+        "count": "1,600+ professionnels"
+      },
+      "healthcare": {
+        "name": "Santé & Bien-être",
+        "description": "Médecins, thérapeutes, nutritionnistes et coaches bien-être",
+        "count": "3,200+ professionnels"
+      },
+      "home": {
+        "name": "Maison & Réparation",
+        "description": "Plombiers, électriciens, charpentiers et services à domicile",
+        "count": "2,100+ professionnels"
+      },
+      "education": {
+        "name": "Éducation & Formation",
+        "description": "Tuteurs, formateurs, coaches et consultants éducatifs",
+        "count": "1,400+ professionnels"
+      },
+      "realEstate": {
+        "name": "Immobilier",
+        "description": "Agents immobiliers, gestionnaires de biens et consultants",
+        "count": "900+ professionnels"
+      },
+      "automotive": {
+        "name": "Automobile",
+        "description": "Mécaniciens, consultants auto et services véhicules",
+        "count": "800+ professionnels"
+      },
+      "business": {
+        "name": "Conseil en Entreprise",
+        "description": "Stratèges d'entreprise, consultants en management et conseillers",
+        "count": "1,100+ professionnels"
+      },
+      "photography": {
+        "name": "Photographie & Médias",
+        "description": "Photographes, vidéastes et professionnels des médias",
+        "count": "1,300+ professionnels"
+      },
+      "technology": {
+        "name": "Technologie & IT",
+        "description": "Développeurs, consultants IT et spécialistes tech",
+        "count": "2,800+ professionnels"
+      }
+    }
+  },
+  "HowItWorks": {
+    "badge": "Processus simple",
+    "title": {
+      "part1": "Comment fonctionne",
+      "part2": "Seeker pour vous"
+    },
+    "subtitle": "Commencer est très simple. Suivez ces trois étapes pour trouver le professionnel qu’il vous faut et entrer en contact avec lui facilement.",
+    "steps": {
+      "step1": {
+        "title": "Trouvez le bon professionnel",
+        "description": "Utilisez les filtres avancés pour découvrir des experts fiables dans votre région.",
+        "features": {
+          "smartSearch": "Recherche intelligente",
+          "categoryBrowsing": "Navigation par catégorie",
+          "locationResults": "Résultats selon la localisation"
+        }
+      },
+      "step2": {
+        "title": "Contactez et échangez directement",
+        "description": "Discutez, appelez ou planifiez une consultation vidéo avec le professionnel choisi en toute simplicité.",
+        "features": {
+          "directMessaging": "Messagerie directe",
+          "videoConsultations": "Consultations vidéo",
+          "profileReviews": "Avis et notes clients"
+        }
+      },
+      "step3": {
+        "title": "Réalisez votre projet en toute confiance",
+        "description": "Suivez la progression, vérifiez la qualité et laissez un avis une fois le travail terminé.",
+        "features": {
+          "projectCompletion": "Suivi du projet",
+          "qualityAssurance": "Contrôle de qualité",
+          "reviewSystem": "Système d’avis intégré"
+        }
+      }
+    },
+    "statsSection": {
+      "title": "Approuvé par des milliers d’utilisateurs",
+      "subtitle": "Rejoignez notre communauté croissante de clients et de professionnels satisfaits"
+    },
+    "stats": {
+      "activeUsers": "Utilisateurs actifs",
+      "verifiedProfessionals": "Professionnels vérifiés",
+      "responseTime": "Temps de réponse moyen",
+      "averageRating": "Note moyenne"
+    }
+  },
+  "featuredProfessionals": {
+    "badge": "Professionnels en vedette",
+    "title": {
+      "main": "Découvrez nos",
+      "highlight": "Experts Recommandés"
+    },
+    "description": "Trouvez et contactez des professionnels hautement qualifiés ayant fait leurs preuves. Chaque expert est vérifié et recommandé par notre communauté.",
+    "reviews": "avis",
+    "projects": "projets",
+    "cta": "Voir le profil"
+  },
+  "Testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Des témoignages réels de personnes ayant trouvé le succès grâce à Seeker",
+    "items": {
+      "1": {
+        "name": "Jennifer Martinez",
+        "role": "Propriétaire d'entreprise",
+        "text": "J'ai trouvé l'avocate idéale pour ma startup grâce à Seeker. Le processus de vérification m'a immédiatement rassurée, et les résultats ont dépassé mes attentes.",
+        "category": "Services juridiques"
+      },
+      "2": {
+        "name": "Robert Thompson",
+        "role": "Responsable marketing",
+        "text": "Le designer que j’ai engagé via Seeker a complètement transformé notre image de marque. Professionnel, créatif et ponctuel.",
+        "category": "Design & Création"
+      },
+      "3": {
+        "name": "Lisa Wang",
+        "role": "Entrepreneure",
+        "text": "Seeker m’a mise en relation avec un excellent conseiller financier qui a restructuré les finances de mon entreprise. Hautement recommandé !",
+        "category": "Finance & Comptabilité"
+      }
+    }
+  },
+  "Footer": {
+    "description": "Vous connecter avec des professionnels de confiance dans divers domaines. Trouvez des experts qualifiés pour le juridique, le design, la finance, le marketing, la santé et plus encore.",
+    "sections": {
+      "services": "Services",
+      "company": "Entreprise",
+      "support": "Support",
+      "professionals": "Pour les Professionnels"
+    },
+    "services": {
+      "legal": "Services Juridiques",
+      "design": "Design & Créatif",
+      "finance": "Finance & Comptabilité",
+      "marketing": "Marketing & Publicité",
+      "healthcare": "Santé & Bien-être",
+      "home": "Maison & Réparation",
+      "education": "Éducation & Formation",
+      "realEstate": "Immobilier"
+    },
+    "company": {
+      "aboutUs": "À Propos",
+      "howItWorks": "Comment ça Marche",
+      "careers": "Carrières",
+      "press": "Presse",
+      "blog": "Blog",
+      "partners": "Partenaires",
+      "investors": "Investisseurs",
+      "contact": "Contact"
+    },
+    "support": {
+      "helpCenter": "Centre d'Aide",
+      "safetyCenter": "Centre de Sécurité",
+      "communityGuidelines": "Règles de la Communauté",
+      "disputeResolution": "Résolution de Conflits",
+      "termsOfService": "Conditions d'Utilisation",
+      "privacyPolicy": "Politique de Confidentialité",
+      "cookiePolicy": "Politique des Cookies",
+      "accessibility": "Accessibilité"
+    },
+    "professionals": {
+      "join": "Rejoindre en tant que Professionnel",
+      "dashboard": "Tableau de Bord Professionnel",
+      "verification": "Processus de Vérification",
+      "successStories": "Histoires de Succès",
+      "resources": "Ressources",
+      "pricing": "Tarification",
+      "apiDocs": "Documentation API",
+      "support": "Support Professionnel"
+    },
+    "copyright": "© 2024 Seeker. Tous droits réservés."
+  }
+}

@@ -2,17 +2,20 @@
 import React from 'react'
 import { motion } from 'motion/react'
 import { PlaceholdersAndVanishInput } from './ui/placeholders-and-vanish-input'
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
+    const t = useTranslations('Hero');
+    
     const placeholders = [
-        "Find a lawyer for business contracts",
-        "Looking for a graphic designer",
-        "Need a financial advisor",
-        "Search for marketing consultants",
-        "Find healthcare professionals",
-        "Looking for home repair services",
-        "Need a real estate agent",
-        "Search for IT specialists"
+        t('searchPlaceholders.lawyer'),
+        t('searchPlaceholders.designer'),
+        t('searchPlaceholders.financialAdvisor'),
+        t('searchPlaceholders.marketingConsultant'),
+        t('searchPlaceholders.healthcare'),
+        t('searchPlaceholders.homeRepair'),
+        t('searchPlaceholders.realEstate'),
+        t('searchPlaceholders.itSpecialist')
       ];
      
       const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,14 +51,14 @@ export default function Hero() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
             >
-              Find Trusted
+              {t('title.part1')}
               <motion.span
                 initial={{ opacity: 0, y: 16, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
                 className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"
               >
-                Professionals
+                {t('title.part2')}
               </motion.span>
             </motion.h1>
             
@@ -66,8 +69,7 @@ export default function Hero() {
               transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed"
             >
-              Connect with qualified professionals across legal, design, finance, marketing, healthcare, and more. 
-              Discover nearby experts who can help you achieve your goals.
+              {t('subtitle')}
             </motion.p>
             
             {/* Search Bar */}
@@ -102,21 +104,21 @@ export default function Hero() {
                 className="flex items-center gap-2"
               >
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>5,000+ Verified Professionals</span>
+                <span>{t('stats.verifiedProfessionals')}</span>
               </motion.div>
               <motion.div
                 variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
                 className="flex items-center gap-2"
               >
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span>50+ Service Categories</span>
+                <span>{t('stats.serviceCategories')}</span>
               </motion.div>
               <motion.div
                 variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
                 className="flex items-center gap-2"
               >
                 <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                <span>10,000+ Successful Connections</span>
+                <span>{t('stats.successfulConnections')}</span>
               </motion.div>
             </motion.div>
           </div>

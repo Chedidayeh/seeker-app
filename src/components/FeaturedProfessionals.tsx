@@ -1,14 +1,11 @@
-import React from 'react'
-import Testimonials from './Testimonials'
-import { Card, CardContent } from './ui/card'
-import { Badge } from './ui/badge'
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
-import { 
-  Star, 
-  MapPin, 
-  Award, 
-  Quote
-} from 'lucide-react'
+"use client";
+import React from "react";
+import Testimonials from "./Testimonials";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Star, MapPin, Award, Quote } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const professionals = [
   {
@@ -23,8 +20,9 @@ const professionals = [
     verified: true,
     experience: "8+ years",
     specialties: ["Corporate Law", "Contract Review", "Business Formation"],
-    quote: "Seeker has transformed how I connect with clients. The platform's verification system builds trust immediately.",
-    projects: 45
+    quote:
+      "Seeker has transformed how I connect with clients. The platform's verification system builds trust immediately.",
+    projects: 45,
   },
   {
     id: 2,
@@ -38,8 +36,9 @@ const professionals = [
     verified: true,
     experience: "6+ years",
     specialties: ["Brand Identity", "UI/UX Design", "Digital Marketing"],
-    quote: "The quality of clients on Seeker is outstanding. Every project has been meaningful and well-compensated.",
-    projects: 32
+    quote:
+      "The quality of clients on Seeker is outstanding. Every project has been meaningful and well-compensated.",
+    projects: 32,
   },
   {
     id: 3,
@@ -53,8 +52,9 @@ const professionals = [
     verified: true,
     experience: "12+ years",
     specialties: ["Investment Planning", "Tax Strategy", "Retirement Planning"],
-    quote: "Seeker's platform makes it easy to showcase my expertise and connect with clients who value professional advice.",
-    projects: 78
+    quote:
+      "Seeker's platform makes it easy to showcase my expertise and connect with clients who value professional advice.",
+    projects: 78,
   },
   {
     id: 4,
@@ -68,39 +68,42 @@ const professionals = [
     verified: true,
     experience: "5+ years",
     specialties: ["SEO", "Social Media", "PPC Advertising"],
-    quote: "The best platform for marketing professionals. Clients come pre-qualified and ready to invest in quality work.",
-    projects: 67
-  }
-]
-
-// testimonials moved to `Testimonials` component
+    quote:
+      "The best platform for marketing professionals. Clients come pre-qualified and ready to invest in quality work.",
+    projects: 67,
+  },
+];
 
 export default function FeaturedProfessionals() {
+  const t = useTranslations("featuredProfessionals");
+
   return (
     <section className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 px-4 py-2 text-sm font-medium">
-            Top Professionals
+          <Badge
+            variant="secondary"
+            className="mb-4 px-4 py-2 text-sm font-medium"
+          >
+            {t("badge")}
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Meet Our
+            {t("title.main")}{" "}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-              Featured Experts
+              {t("title.highlight")}
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Connect with top-rated professionals who have proven track records of success. 
-            Each expert is verified and comes highly recommended by our community.
+            {t("description")}
           </p>
         </div>
 
-        {/* Featured Professionals Grid */}
+        {/* Professionals Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {professionals.map((professional) => (
-            <Card 
-              key={professional.id} 
+            <Card
+              key={professional.id}
               className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-white dark:bg-gray-800"
             >
               <CardContent className="p-6">
@@ -108,9 +111,15 @@ export default function FeaturedProfessionals() {
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <Avatar className="w-12 h-12">
-                      <AvatarImage src={professional.image} alt={professional.name} />
+                      <AvatarImage
+                        src={professional.image}
+                        alt={professional.name}
+                      />
                       <AvatarFallback className="bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-semibold">
-                        {professional.name.split(' ').map(n => n[0]).join('')}
+                        {professional.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
                       </AvatarFallback>
                     </Avatar>
                     {professional.verified && (
@@ -127,7 +136,7 @@ export default function FeaturedProfessionals() {
                       </span>
                     </div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">
-                      {professional.reviews} reviews
+                      {professional.reviews} {t("reviews")}
                     </div>
                   </div>
                 </div>
@@ -155,8 +164,10 @@ export default function FeaturedProfessionals() {
 
                 {/* Stats */}
                 <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-300 mb-4">
-                  <span>{professional.experience} experience</span>
-                  <span>{professional.projects} projects</span>
+                  <span>{professional.experience}</span>
+                  <span>
+                    {professional.projects} {t("projects")}
+                  </span>
                 </div>
 
                 {/* Quote */}
@@ -169,19 +180,16 @@ export default function FeaturedProfessionals() {
 
                 {/* CTA */}
                 <button className="w-full mt-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg transition-all duration-200 transform group-hover:scale-105">
-                  View Profile
+                  {t("cta")}
                 </button>
               </CardContent>
-              
-              {/* Hover Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </Card>
           ))}
         </div>
 
-        {/* Testimonials Section */}
         <Testimonials />
       </div>
     </section>
-  )
+  );
 }

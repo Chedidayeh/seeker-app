@@ -1,0 +1,237 @@
+{
+  "HomePage": {
+    "title": "Welcome to Seeker",
+    "description": "Find the best professionals for your needs"
+  },
+  "Navigation": {
+    "categories": "Categories",
+    "findProviders": "Find Professionals",
+    "howItWorks": "How It Works",
+    "signIn": "Sign In"
+  },
+  "Hero": {
+    "title": {
+      "part1": "Find Trusted",
+      "part2": "Professionals"
+    },
+    "subtitle": "Connect with qualified professionals across legal, design, finance, marketing, healthcare, and more. Discover nearby experts who can help you achieve your goals.",
+    "searchPlaceholders": {
+      "lawyer": "Find a lawyer for business contracts",
+      "designer": "Looking for a graphic designer",
+      "financialAdvisor": "Need a financial advisor",
+      "marketingConsultant": "Search for marketing consultants",
+      "healthcare": "Find healthcare professionals",
+      "homeRepair": "Looking for home repair services",
+      "realEstate": "Need a real estate agent",
+      "itSpecialist": "Search for IT specialists"
+    },
+    "stats": {
+      "verifiedProfessionals": "5,000+ Verified Professionals",
+      "serviceCategories": "50+ Service Categories",
+      "successfulConnections": "10,000+ Successful Connections"
+    }
+  },
+  "ServiceCategories": {
+    "badge": "Explore Services",
+    "title": {
+      "part1": "Find Professionals in",
+      "part2": "Every Category"
+    },
+    "description": "From legal advice to creative design, connect with verified professionals across 50+ service categories. Each expert is carefully vetted for quality and expertise.",
+    "cta": "Browse All Categories",
+    "categories": {
+      "legal": {
+        "name": "Legal Services",
+        "description": "Lawyers, attorneys, and legal consultants",
+        "count": "1,200+ professionals"
+      },
+      "design": {
+        "name": "Design & Creative",
+        "description": "Graphic designers, UI/UX, and creative professionals",
+        "count": "2,500+ professionals"
+      },
+      "finance": {
+        "name": "Finance & Accounting",
+        "description": "Financial advisors, accountants, and tax experts",
+        "count": "1,800+ professionals"
+      },
+      "marketing": {
+        "name": "Marketing & Advertising",
+        "description": "Digital marketers, SEO experts, and brand strategists",
+        "count": "1,600+ professionals"
+      },
+      "healthcare": {
+        "name": "Healthcare & Wellness",
+        "description": "Doctors, therapists, nutritionists, and wellness coaches",
+        "count": "3,200+ professionals"
+      },
+      "home": {
+        "name": "Home & Repair",
+        "description": "Plumbers, electricians, carpenters, and home services",
+        "count": "2,100+ professionals"
+      },
+      "education": {
+        "name": "Education & Training",
+        "description": "Tutors, trainers, coaches, and educational consultants",
+        "count": "1,400+ professionals"
+      },
+      "realEstate": {
+        "name": "Real Estate",
+        "description": "Real estate agents, property managers, and consultants",
+        "count": "900+ professionals"
+      },
+      "automotive": {
+        "name": "Automotive",
+        "description": "Mechanics, auto consultants, and vehicle services",
+        "count": "800+ professionals"
+      },
+      "business": {
+        "name": "Business Consulting",
+        "description": "Business strategists, management consultants, and advisors",
+        "count": "1,100+ professionals"
+      },
+      "photography": {
+        "name": "Photography & Media",
+        "description": "Photographers, videographers, and media professionals",
+        "count": "1,300+ professionals"
+      },
+      "technology": {
+        "name": "Technology & IT",
+        "description": "Developers, IT consultants, and tech specialists",
+        "count": "2,800+ professionals"
+      }
+    }
+  },
+  "HowItWorks": {
+    "badge": "Simple Process",
+    "title": {
+      "part1": "How Seeker",
+      "part2": "Works for You"
+    },
+    "subtitle": "Getting started is simple. Follow these three easy steps to connect with the perfect professional for your needs.",
+    "steps": {
+      "step1": {
+        "title": "Find the Right Expert",
+        "description": "Use advanced filters to discover verified professionals in your area.",
+        "features": {
+          "smartSearch": "Smart search engine",
+          "categoryBrowsing": "Browse by category",
+          "locationResults": "Results by location"
+        }
+      },
+      "step2": {
+        "title": "Connect & Communicate",
+        "description": "Chat, call, or video conference directly with your chosen professional.",
+        "features": {
+          "directMessaging": "Instant messaging",
+          "videoConsultations": "Video consultations",
+          "profileReviews": "View client reviews"
+        }
+      },
+      "step3": {
+        "title": "Get Things Done",
+        "description": "Track your project, ensure quality, and leave your review after completion.",
+        "features": {
+          "projectCompletion": "Project completion tracking",
+          "qualityAssurance": "Quality assurance",
+          "reviewSystem": "Integrated review system"
+        }
+      }
+    },
+    "statsSection": {
+      "title": "Trusted by Thousands",
+      "subtitle": "Join our growing community of satisfied users and professionals"
+    },
+    "stats": {
+      "activeUsers": "Active Users",
+      "verifiedProfessionals": "Verified Professionals",
+      "responseTime": "Avg. Response Time",
+      "averageRating": "Average Rating"
+    }
+  },
+  "featuredProfessionals": {
+    "badge": "Top Professionals",
+    "title": {
+      "main": "Meet Our",
+      "highlight": "Featured Experts"
+    },
+    "description": "Connect with top-rated professionals who have proven track records of success. Each expert is verified and highly recommended by our community.",
+    "reviews": "reviews",
+    "projects": "projects",
+    "cta": "View Profile"
+  },
+  "Testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real experiences from real people who found success through Seeker",
+    "items": {
+      "1": {
+        "name": "Jennifer Martinez",
+        "role": "Small Business Owner",
+        "text": "Found the perfect lawyer for my startup through Seeker. The verification process gave me confidence, and the results exceeded expectations.",
+        "category": "Legal Services"
+      },
+      "2": {
+        "name": "Robert Thompson",
+        "role": "Marketing Manager",
+        "text": "The designer I hired through Seeker completely transformed our brand identity. Professional, creative, and delivered on time.",
+        "category": "Design & Creative"
+      },
+      "3": {
+        "name": "Lisa Wang",
+        "role": "Entrepreneur",
+        "text": "Seeker connected me with an amazing financial advisor who helped restructure my business finances. Highly recommend!",
+        "category": "Finance & Accounting"
+      }
+    }
+  },
+  "Footer": {
+    "description": "Connecting you with trusted professionals across various domains. Find qualified experts for legal, design, finance, marketing, healthcare, and more.",
+    "sections": {
+      "services": "Services",
+      "company": "Company",
+      "support": "Support",
+      "professionals": "For Professionals"
+    },
+    "services": {
+      "legal": "Legal Services",
+      "design": "Design & Creative",
+      "finance": "Finance & Accounting",
+      "marketing": "Marketing & Advertising",
+      "healthcare": "Healthcare & Wellness",
+      "home": "Home & Repair",
+      "education": "Education & Training",
+      "realEstate": "Real Estate"
+    },
+    "company": {
+      "aboutUs": "About Us",
+      "howItWorks": "How It Works",
+      "careers": "Careers",
+      "press": "Press",
+      "blog": "Blog",
+      "partners": "Partners",
+      "investors": "Investors",
+      "contact": "Contact"
+    },
+    "support": {
+      "helpCenter": "Help Center",
+      "safetyCenter": "Safety Center",
+      "communityGuidelines": "Community Guidelines",
+      "disputeResolution": "Dispute Resolution",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "accessibility": "Accessibility"
+    },
+    "professionals": {
+      "join": "Join as Professional",
+      "dashboard": "Professional Dashboard",
+      "verification": "Verification Process",
+      "successStories": "Success Stories",
+      "resources": "Resources",
+      "pricing": "Pricing",
+      "apiDocs": "API Documentation",
+      "support": "Professional Support"
+    },
+    "copyright": "© 2024 Seeker. All rights reserved."
+  }
+}

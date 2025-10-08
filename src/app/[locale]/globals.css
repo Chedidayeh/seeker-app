@@ -73,6 +73,45 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Enhanced custom scrollbar styles for better visibility and compatibility in both dark and light modes */
+  /* Supports WebKit (Chrome, Safari), Firefox, with hover effects, transitions, and theme-aware variables */
+
+  /* Base thin scrollbar for Firefox */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent; /* Thumb and track colors using variables for theme adaptation */
+  }
+
+  /* Transparent track for WebKit */
+  .scrollbar-track-transparent::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 9999px; /* Added rounding for smoother look */
+  }
+
+  /* Thumb styling for WebKit */
+  .scrollbar-thumb-border::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 9999px;
+    border: 2px solid hsl(var(--background)); /* Added border for better contrast and macOS-like appearance */
+    transition: background-color 0.2s ease; /* Smooth transition on hover */
+  }
+
+  /* Scrollbar size for vertical (width) and horizontal (height) */
+  .scrollbar-thumb-border::-webkit-scrollbar {
+    width: 6px;
+    height: 6px; /* Added height for horizontal scrollbars */
+  }
+
+  /* Hover effect for thumb in WebKit - changes color on element hover */
+  .hover\:scrollbar-thumb-muted-foreground:hover::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground));
+  }
+
+  /* Optional: Add hover effect directly on thumb (for browsers that support it) */
+  .scrollbar-thumb-border::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground));
+  }
 }
 
 @layer utilities {

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { 
   Mail, 
@@ -9,49 +10,7 @@ import {
   Linkedin,
   Youtube,
 } from 'lucide-react'
-
-const footerLinks = {
-  services: [
-    { name: "Legal Services", href: "#" },
-    { name: "Design & Creative", href: "#" },
-    { name: "Finance & Accounting", href: "#" },
-    { name: "Marketing & Advertising", href: "#" },
-    { name: "Healthcare & Wellness", href: "#" },
-    { name: "Home & Repair", href: "#" },
-    { name: "Education & Training", href: "#" },
-    { name: "Real Estate", href: "#" }
-  ],
-  company: [
-    { name: "About Us", href: "#" },
-    { name: "How It Works", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Partners", href: "#" },
-    { name: "Investors", href: "#" },
-    { name: "Contact", href: "#" }
-  ],
-  support: [
-    { name: "Help Center", href: "#" },
-    { name: "Safety Center", href: "#" },
-    { name: "Community Guidelines", href: "#" },
-    { name: "Dispute Resolution", href: "#" },
-    { name: "Terms of Service", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Cookie Policy", href: "#" },
-    { name: "Accessibility", href: "#" }
-  ],
-  professionals: [
-    { name: "Join as Professional", href: "#" },
-    { name: "Professional Dashboard", href: "#" },
-    { name: "Verification Process", href: "#" },
-    { name: "Success Stories", href: "#" },
-    { name: "Resources", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "API Documentation", href: "#" },
-    { name: "Professional Support", href: "#" }
-  ]
-}
+import { useTranslations } from 'next-intl'
 
 const socialLinks = [
   { name: "Facebook", icon: Facebook, href: "#" },
@@ -62,8 +21,52 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+  const t = useTranslations('Footer');
+  
+  const footerLinks = {
+    services: [
+      { name: t('services.legal'), href: "#" },
+      { name: t('services.design'), href: "#" },
+      { name: t('services.finance'), href: "#" },
+      { name: t('services.marketing'), href: "#" },
+      { name: t('services.healthcare'), href: "#" },
+      { name: t('services.home'), href: "#" },
+      { name: t('services.education'), href: "#" },
+      { name: t('services.realEstate'), href: "#" }
+    ],
+    company: [
+      { name: t('company.aboutUs'), href: "#" },
+      { name: t('company.howItWorks'), href: "#" },
+      { name: t('company.careers'), href: "#" },
+      { name: t('company.press'), href: "#" },
+      { name: t('company.blog'), href: "#" },
+      { name: t('company.partners'), href: "#" },
+      { name: t('company.investors'), href: "#" },
+      { name: t('company.contact'), href: "#" }
+    ],
+    support: [
+      { name: t('support.helpCenter'), href: "#" },
+      { name: t('support.safetyCenter'), href: "#" },
+      { name: t('support.communityGuidelines'), href: "#" },
+      { name: t('support.disputeResolution'), href: "#" },
+      { name: t('support.termsOfService'), href: "#" },
+      { name: t('support.privacyPolicy'), href: "#" },
+      { name: t('support.cookiePolicy'), href: "#" },
+      { name: t('support.accessibility'), href: "#" }
+    ],
+    professionals: [
+      { name: t('professionals.join'), href: "#" },
+      { name: t('professionals.dashboard'), href: "#" },
+      { name: t('professionals.verification'), href: "#" },
+      { name: t('professionals.successStories'), href: "#" },
+      { name: t('professionals.resources'), href: "#" },
+      { name: t('professionals.pricing'), href: "#" },
+      { name: t('professionals.apiDocs'), href: "#" },
+      { name: t('professionals.support'), href: "#" }
+    ]
+  }
   return (
-    <footer className="bg-gray-900 text-white border-t">
+<footer className="relative bottom-0 w-full bg-gradient-to-t from-gray-950 via-gray-900 to-gray-950 text-white border-t border-gray-800">
 
       {/* Main Footer Content */}
       <div className="py-16">
@@ -78,8 +81,7 @@ export default function Footer() {
                 <span className="text-2xl font-bold">Seeker</span>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Connecting you with trusted professionals across various domains. 
-                Find qualified experts for legal, design, finance, marketing, healthcare, and more.
+                {t('description')}
               </p>
               
               {/* Contact Info */}
@@ -101,7 +103,7 @@ export default function Footer() {
 
             {/* Services */}
             <div>
-              <h4 className="text-lg font-semibold mb-6">Services</h4>
+              <h4 className="text-lg font-semibold mb-6">{t('sections.services')}</h4>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
@@ -118,7 +120,7 @@ export default function Footer() {
 
             {/* Company */}
             <div>
-              <h4 className="text-lg font-semibold mb-6">Company</h4>
+              <h4 className="text-lg font-semibold mb-6">{t('sections.company')}</h4>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
@@ -135,7 +137,7 @@ export default function Footer() {
 
             {/* Support */}
             <div>
-              <h4 className="text-lg font-semibold mb-6">Support</h4>
+              <h4 className="text-lg font-semibold mb-6">{t('sections.support')}</h4>
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.name}>
@@ -152,7 +154,7 @@ export default function Footer() {
 
             {/* Professionals */}
             <div>
-              <h4 className="text-lg font-semibold mb-6">For Professionals</h4>
+              <h4 className="text-lg font-semibold mb-6">{t('sections.professionals')}</h4>
               <ul className="space-y-3">
                 {footerLinks.professionals.map((link) => (
                   <li key={link.name}>
@@ -171,12 +173,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-800 py-8">
+      <div className="border-t border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Copyright */}
             <div className="text-gray-400 text-sm">
-              © 2024 Seeker. All rights reserved.
+              {t('copyright')}
             </div>
 
             {/* Social Links */}
