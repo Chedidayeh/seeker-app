@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { LocaleProvider } from "@/contexts/LocaleContext";
-import { Recursive, Tajawal } from "next/font/google";
+import { Outfit, Recursive, Tajawal } from "next/font/google";
 import { AppNavbar } from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SidebarProvider } from "@/contexts/SidebarContext";
 
-const recursive = Recursive({ subsets: ["vietnamese"] });
-const tajawal = Tajawal({
+const outfit = Outfit({
+  subsets: ["latin"],
+});const tajawal = Tajawal({
   subsets: ['arabic'],
   weight: "700"
 });
@@ -32,7 +34,7 @@ export default function RootLayout({
   const isRTL = locale === 'ar';
   return (
     <html dir={isRTL ? 'rtl' : 'ltr'} lang={locale} suppressHydrationWarning>
-      <body className={isRTL ? tajawal.className : recursive.className}>
+      <body className={isRTL ? tajawal.className : outfit.className}>
 
         <NextIntlClientProvider>
 
@@ -44,16 +46,13 @@ export default function RootLayout({
           >
             <LocaleProvider locale={locale}>
 
+            <SidebarProvider>
 
-              <div className="min-h-screen flex flex-col">
-                <AppNavbar />
+            {children}
 
-                <main className="flex-grow">
-                  
-                  {children}
-                </main>
-                <Footer />
-              </div>
+            </SidebarProvider>
+
+        
 
 
             </LocaleProvider>

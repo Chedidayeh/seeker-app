@@ -74,7 +74,7 @@ export const AnimatedThemeToggler = ({
 
   return (
     <Button
-      variant={"secondary"}
+      variant={"ghost"}
       ref={buttonRef}
       onClick={toggleTheme}
       className={cn(className)}

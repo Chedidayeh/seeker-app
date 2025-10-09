@@ -17,7 +17,7 @@ import {
 } from 'lucide-react'
 import { InteractiveHoverButton } from './ui/interactive-hover-button'
 import { useTranslations } from 'next-intl'
-import CategoryCard from '@/app/[locale]/categories/_components/CategoryCard'
+import CategoryCard from '@/app/[locale]/(home)/categories/_components/CategoryCard'
 
 export default function ServiceCategories() {
   const t = useTranslations('ServiceCategories');
