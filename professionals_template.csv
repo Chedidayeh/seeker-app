@@ -1,0 +1,3 @@
+full_name,headline,bio,domain_name,email,phone,website,linkedin_url,instagram_url,city,country,image_url,available
+John Doe,Professional Plumber,Expert in residential plumbing,Plumbing,john@example.com,+1234567890,https://johndoe.com,https://linkedin.com/in/johndoe,https://instagram.com/johndoe,New York,USA,https://example.com/photo.jpg,true
+Jane Smith,Home Cleaning Specialist,10 years experience,Home Cleaning,jane@example.com,+0987654321,,,,Los Angeles,USA,,yes

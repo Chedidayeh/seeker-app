@@ -21,7 +21,6 @@ export function AppNavbar() {
   const navItems = [
     { name: t('categories'), link: "/categories" },
     { name: t('findProviders'), link: "/professionals" },
-    { name: t('howItWorks'), link: "#how-it-works" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

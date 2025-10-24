@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -43,14 +43,94 @@ model User {
   email         String    @unique
   emailVerified DateTime?
   image         String?
+
+  role          Role     @default(USER)
+  avatar_url    String?
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
   accounts      Account[]
   sessions      Session[]
 }
 
-model VerificationToken {
-  identifier String
-  token      String   @unique
-  expires    DateTime
 
-  @@unique([identifier, token])
+model Domain {
+  id            String         @id @default(uuid())
+  name          String         @unique
+  description   String?
+  status        String       @default("inactive")
+  icon          String?
+  professionals Professional[]
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  views         Int       @default(0)
+
+  ViewEvent ViewEvent[]
+
+  SearchEvent SearchEvent[]
+}
+
+model Professional {
+  id            String   @id @default(uuid())
+  full_name     String
+  headline      String
+  bio           String?
+  domain        Domain   @relation(fields: [domain_id], references: [id])
+  domain_id     String
+  email         String?
+  phone         String?
+  website       String?
+  linkedin_url  String?
+  instagram_url String?
+  city          String?
+  image_url     String?
+  address       String
+  available     Boolean  @default(true)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  views         Int       @default(0)
+
+  ViewEvent ViewEvent[]
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+
+
+model Visitor {
+  id           String       @id @default(uuid())
+  session_id   String       @unique
+  ip_address   String?
+  user_agent   String?
+  country      String?
+  viewEvents   ViewEvent[]
+  searchEvents SearchEvent[]
+  created_at   DateTime     @default(now())
+  last_seen    DateTime     @default(now())
+}
+
+model ViewEvent {
+  id              String        @id @default(uuid())
+  visitor         Visitor       @relation(fields: [visitor_id], references: [id])
+  visitor_id      String
+  professional    Professional? @relation(fields: [professional_id], references: [id])
+  professional_id String?
+  domain          Domain?       @relation(fields: [domain_id], references: [id])
+  domain_id       String?
+  viewed_at       DateTime      @default(now())
+}
+
+model SearchEvent {
+  id              String    @id @default(uuid())
+  visitor         Visitor   @relation(fields: [visitor_id], references: [id])
+  visitor_id      String
+  query           String
+  domain          Domain?   @relation(fields: [domain_id], references: [id])
+  domain_id       String?
+  results_count   Int       @default(0)
+  searched_at     DateTime  @default(now())
 }

@@ -1,52 +1,46 @@
-"use client";
-
 import React from "react";
-import { Badge } from "@/components/ui/badge";
 import {
-  ArrowDownIcon,
-  ArrowUpIcon,
-  UserIcon,
   BriefcaseIcon,
   TagIcon,
-  MessageCircleIcon,
+  BarChart3Icon,
+  EyeIcon,
 } from "lucide-react";
+import { getDashboardMetrics } from "@/actions/metrics";
 
-const metricsData = [
-  {
-    title: "Registered Professionals",
-    value: 1245,
-    change: 8.2,
-    trend: "up",
-    icon: <BriefcaseIcon className="text-white w-4 h-4" />,
-    iconBg: "bg-gradient-to-tr from-indigo-500 to-purple-500",
-  },
-  {
-    title: "Active Users",
-    value: 3782,
-    change: 11.0,
-    trend: "up",
-    icon: <UserIcon className="text-white w-4 h-4" />,
-    iconBg: "bg-gradient-to-tr from-green-400 to-teal-500",
-  },
-  {
-    title: "Service Categories",
-    value: 56,
-    change: 2.5,
-    trend: "up",
-    icon: <TagIcon className="text-white w-4 h-4" />,
-    iconBg: "bg-gradient-to-tr from-yellow-400 to-orange-500",
-  },
-  {
-    title: "Contacts Sent",
-    value: 872,
-    change: 5.6,
-    trend: "down",
-    icon: <MessageCircleIcon className="text-white w-4 h-4" />,
-    iconBg: "bg-gradient-to-tr from-red-400 to-pink-500",
-  },
-];
+export const Metrics = async () => {
+  const metrics = await getDashboardMetrics();
 
-export const Metrics = () => {
+  const metricsData = [
+    {
+      title: "Total Professionals",
+      value: metrics.totalProfessionals,
+      description: "Verified professionals across all service fields",
+      icon: <BriefcaseIcon className="text-white w-4 h-4" />,
+      iconBg: "bg-gradient-to-tr from-indigo-500 to-purple-500",
+    },
+    {
+      title: "Total Categories",
+      value: metrics.totalCategories,
+      description: "Active service categories available on Seeker",
+      icon: <TagIcon className="text-white w-4 h-4" />,
+      iconBg: "bg-gradient-to-tr from-yellow-400 to-orange-500",
+    },
+    {
+      title: "Professionals per Category",
+      value: metrics.professionalsPerCategory.toFixed(1),
+      description: "Average number of professionals in each category",
+      icon: <BarChart3Icon className="text-white w-4 h-4" />,
+      iconBg: "bg-gradient-to-tr from-green-400 to-emerald-500",
+    },
+    {
+      title: "Total Views (Profiles & Categories)",
+      value: metrics.totalViews,
+      description: "Combined total profile and category views",
+      icon: <EyeIcon className="text-white w-4 h-4" />,
+      iconBg: "bg-gradient-to-tr from-red-400 to-pink-500",
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-6">
       {metricsData.map((metric, index) => (
@@ -56,7 +50,7 @@ export const Metrics = () => {
         >
           {/* Icon */}
           <div
-            className={`flex items-center justify-center w-8 h-8 rounded-xl ${metric.iconBg}`}
+            className={`flex items-center justify-center w-9 h-9 rounded-xl ${metric.iconBg}`}
           >
             {metric.icon}
           </div>
@@ -68,10 +62,17 @@ export const Metrics = () => {
                 {metric.title}
               </span>
               <h4 className="mt-2 font-bold text-gray-800 text-3xl dark:text-white/90">
-                {metric.value.toLocaleString()}
+                {typeof metric.value === 'number' 
+                  ? metric.value.toLocaleString() 
+                  : metric.value}
               </h4>
             </div>
           </div>
+
+          {/* Description */}
+          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+            {metric.description}
+          </p>
         </div>
       ))}
     </div>

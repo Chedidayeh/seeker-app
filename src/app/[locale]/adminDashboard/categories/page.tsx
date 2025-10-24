@@ -1,7 +1,15 @@
-import React from 'react'
 
-export default function page() {
+import { getCategories } from './actions/actions';
+import View from './View';
+
+
+
+
+export default async function CategoriesPage() {
+  const categories = await getCategories();
+
   return (
-    <div>page</div>
-  )
+    <View categories={categories} />
+    
+  );
 }

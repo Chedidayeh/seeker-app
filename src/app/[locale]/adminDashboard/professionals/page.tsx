@@ -1,7 +1,11 @@
 import React from 'react'
+import { getProfessionals } from './actions/actions';
+import View from './View';
 
-export default function page() {
+export default async function ProfessionalsPage() {
+  const professionals = await getProfessionals();
+
   return (
-    <div>page</div>
-  )
+    <View professionals={professionals} />
+  );
 }

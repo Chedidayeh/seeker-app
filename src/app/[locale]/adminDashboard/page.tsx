@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 export default function Ecommerce() {
   return (
     <div className="flex flex-col gap-8">
-            <Metrics />
-            <ComponentCard title="Basic Table 1">
-          <BasicTableOne />
-        </ComponentCard>
+      <Metrics />
+      {/* <ComponentCard title="Basic Table 1">
+        <BasicTableOne />
+      </ComponentCard> */}
     </div>
   );
 }

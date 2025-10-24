@@ -1,13 +1,12 @@
 "use client";
 
-
+import "@/app/globals.css";
 import React from "react";
 import { useSidebar } from "@/contexts/SidebarContext";
-import AppSidebar from "../../../components/adminDashboard/sidebar/AppSidebar";
-import Backdrop from "../../../components/adminDashboard/sidebar/Backdrop";
-import AppHeader from "../../../components/adminDashboard/header/AppHeader";
-import PageBreadcrumb from "../../../components/adminDashboard/PageBreadCrumb";
-
+import AppSidebar from "@/components/adminDashboard/sidebar/AppSidebar";
+import Backdrop from "@/components/adminDashboard/sidebar/Backdrop";
+import AppHeader from "@/components/adminDashboard/header/AppHeader";
+import PageBreadcrumb from "@/components/adminDashboard/PageBreadCrumb";
 export default function AdminLayout({
   children,
 }: {

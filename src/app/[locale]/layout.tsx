@@ -4,18 +4,17 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { LocaleProvider } from "@/contexts/LocaleContext";
 import { Outfit, Recursive, Tajawal } from "next/font/google";
-import { AppNavbar } from "@/components/Header";
-import Footer from "@/components/Footer";
 import { SidebarProvider } from "@/contexts/SidebarContext";
+import { SessionProvider } from "next-auth/react";
+import NextTopLoader from 'nextjs-toploader';
 
 const outfit = Outfit({
   subsets: ["latin"],
-});const tajawal = Tajawal({
-  subsets: ['arabic'],
-  weight: "700"
 });
-
-
+const tajawal = Tajawal({
+  subsets: ["arabic"],
+  weight: "700",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,40 +22,33 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children, params
+  children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string };
-
 }>) {
   const { locale } = params;
 
-  const isRTL = locale === 'ar';
+  const isRTL = locale === "ar";
   return (
-    <html dir={isRTL ? 'rtl' : 'ltr'} lang={locale} suppressHydrationWarning>
+    <html dir={isRTL ? "rtl" : "ltr"} lang={locale} suppressHydrationWarning>
       <body className={isRTL ? tajawal.className : outfit.className}>
-
         <NextIntlClientProvider>
+          <SessionProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <NextTopLoader />
 
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <LocaleProvider locale={locale}>
-
-            <SidebarProvider>
-
-            {children}
-
-            </SidebarProvider>
-
-        
-
-
-            </LocaleProvider>
-          </ThemeProvider>
+              <LocaleProvider locale={locale}>
+                <SidebarProvider>{children}</SidebarProvider>
+              </LocaleProvider>
+            </ThemeProvider>
+          </SessionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>S'identifier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/102a7e6ae6.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/fav.ico">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* CSS personnalisé pour limiter la hauteur de l'image */
+        .left-column {
+            position: relative;
+            padding: 0;
+        }
+
+        .button-blue {
+            background-color: #080768;
+        }
+
+        .button-yellow {
+            background-color: #F3BD6A;
+        }
+
+        .left-column img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Limite la hauteur de l'image à la hauteur de l'écran */
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 d-none d-md-block left-column">
+                <!-- Image en plein écran dans la colonne de gauche -->
+                <img src="hello1.jpg" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <!-- Contenu de la colonne de droite avec padding de 40px -->
+                <div class="p-4">
+                    <div class="container">
+                        <div class="row justify-content-center mt-5">
+                            <div class="col-md-6">
+                                
+                                <center><a href="/client/"><img src="allojusticeblue.png" height="50"></a></center><br><br>
+                                <center><h4 class="text-muted">Bienvenue</h4></center><br>
+
+                                <form method="post" action="index.php">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control rounded-pill" id="email" name="email" placeholder="E-mail" required>
+                                    </div>
+                                    <div class="text-danger mt-2"></div> <!-- Message d'erreur -->
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control rounded-pill" id="password" name="password" placeholder="Mot de passe" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text rounded-pill" id="password-toggle" onclick="togglePasswordVisibility(this)">
+                                                    <i id="password-icon" class="fa fa-eye-slash"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control rounded-pill" id="profession" name="profession" required>
+                                            <option value="" disabled selected>Choisissez une profession</option>
+                                            <option value="Avocat">Avocat</option>
+                                            <option value="Huissier">Huissier</option>
+                                            <option value="Notaire">Notaire</option>
+                                            <option value="Expert Judiciaire">Expert Judiciaire</option>
+                                            <option value="Traducteur">Traducteur Assermenté</option>
+                                            <option value="Médecin">Médecin Légiste</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn button-blue w-100 rounded-pill text-white">Se connecter</button>
+                                </form>
+                                <br>
+                                <center><a href="/client/lostpassword.html" style="color: black;">Mot de passe oublié ?</a></center>
+                                <br><br>
+                                <center><h5 class="text-muted">Pas encore inscrit(e) ?</h5></center>
+                                <a href="register.php" class="btn button-yellow btn-block rounded-pill">S'inscrire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var passwordVisible = false;
+
+    function togglePasswordVisibility(icon) {
+        var passwordInput = document.getElementById("password");
+        var passwordIcon = document.getElementById("password-icon");
+
+        if (passwordVisible) {
+            passwordInput.type = "password";
+            passwordIcon.classList.remove("fa-eye");
+            passwordIcon.classList.add("fa-eye-slash");
+        } else {
+            passwordInput.type = "text";
+            passwordIcon.classList.remove("fa-eye-slash");
+            passwordIcon.classList.add("fa-eye");
+        }
+
+        passwordVisible = !passwordVisible;
+    }
+</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
