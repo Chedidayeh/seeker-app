@@ -219,7 +219,7 @@ export default function View({ professionals }: { professionals: Professional[] 
       let successCount = 0;
       let errorCount = 0;
 
-      for (const id of selectedIds) {
+      for (const id of Array.from(selectedIds)) {
         const result = await deleteProfessional(id);
         if (result.success) {
           successCount++;
@@ -255,7 +255,7 @@ export default function View({ professionals }: { professionals: Professional[] 
       let successCount = 0;
       let errorCount = 0;
 
-      for (const id of selectedIds) {
+      for (const id of Array.from(selectedIds)) {
         const result = await updateProfessional(id, { available });
         if (result.success) {
           successCount++;
